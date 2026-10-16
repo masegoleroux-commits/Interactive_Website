@@ -1,0 +1,198 @@
+:root {
+    --ink: #1b1b1f;
+    --yellow: #ffd23f;
+    --red: #e53935;
+    --bg: #2a1f14;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", system-ui, sans-serif;
+    background:
+        radial-gradient(circle at 50% 0%, #6b4a2b 0%, transparent 60%),
+        var(--bg);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    overscroll-behavior: none;
+}
+
+.game-shell {
+    width: 100%;
+    max-width: 420px;
+}
+
+.hud {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.hud div {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    padding: 0.35rem 0.6rem;
+    display: grid;
+}
+
+.hud span {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+}
+
+.hud b {
+    font-family: "Bungee", sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    color: var(--yellow);
+}
+
+#hud-lives {
+    color: #ff5c8a;
+    letter-spacing: 2px;
+}
+
+#pause {
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.stage {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 90px);
+    object-fit: contain;
+    background: #c9a26b;
+    touch-action: none;
+}
+
+.screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(20, 14, 8, 0.82);
+    backdrop-filter: blur(3px);
+}
+
+.screen[hidden] {
+    display: none;
+}
+
+h1 {
+    font-family: "Bungee", sans-serif;
+    font-weight: normal;
+    font-size: 3.4rem;
+    line-height: 0.95;
+    color: #fff;
+    text-shadow: 4px 4px 0 var(--red);
+}
+
+h1 span {
+    color: var(--yellow);
+}
+
+h2 {
+    font-family: "Bungee", sans-serif;
+    font-weight: normal;
+    font-size: 1.9rem;
+    color: var(--yellow);
+}
+
+.screen p {
+    max-width: 300px;
+    line-height: 1.5;
+}
+
+.how {
+    list-style: none;
+    font-size: 0.85rem;
+    opacity: 0.85;
+    display: grid;
+    gap: 0.4rem;
+}
+
+kbd {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 0 0.35rem;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.big {
+    font-family: "Bungee", sans-serif;
+    font-size: 1.2rem;
+    background: var(--yellow);
+    color: var(--ink);
+    border: none;
+    border-radius: 999px;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #b38f00;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.big:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #b38f00;
+}
+
+.final {
+    font-size: 1.2rem;
+}
+
+.final b {
+    font-family: "Bungee", sans-serif;
+    font-weight: normal;
+    color: var(--yellow);
+    font-size: 2rem;
+    display: block;
+}
+
+.new-best {
+    color: var(--yellow);
+    font-weight: 600;
+}
+
+.best {
+    opacity: 0.8;
+}
+
+button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}

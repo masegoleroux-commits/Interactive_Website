@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Taxi Rush: dodge potholes, pick up passengers and race through Mzansi traffic. A canvas game.">
+    <title>Taxi Rush</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="game-shell">
+        <div class="hud">
+            <div><span>Fares</span><b id="hud-score">R0</b></div>
+            <div><span>Distance</span><b id="hud-distance">0 km</b></div>
+            <div><span>Lives</span><b id="hud-lives">❤❤❤</b></div>
+            <button type="button" id="pause" aria-label="Pause">⏸</button>
+        </div>
+
+        <div class="stage">
+            <canvas id="game" width="420" height="680" aria-label="Taxi Rush game"></canvas>
+
+            <div class="screen" id="start-screen">
+                <h1>Taxi<br><span>Rush</span></h1>
+                <p>Pick up passengers 🙋🏾 and dodge potholes, cones and traffic on the road to town.</p>
+                <ul class="how">
+                    <li><kbd>←</kbd> <kbd>→</kbd> or <kbd>A</kbd> <kbd>D</kbd> to change lanes</li>
+                    <li>On a phone: tap the left or right side, or swipe</li>
+                    <li><kbd>P</kbd> or <kbd>Esc</kbd> to pause</li>
+                </ul>
+                <button type="button" class="big" id="start">Start driving</button>
+                <p class="best">Best: <b id="best">R0</b></p>
+            </div>
+
+            <div class="screen" id="over-screen" hidden>
+                <h2>Eish! Game over</h2>
+                <p class="final">You made <b id="final-score">R0</b></p>
+                <p id="final-detail"></p>
+                <p class="new-best" id="new-best" hidden>🏆 New best!</p>
+                <button type="button" class="big" id="restart">Drive again</button>
+            </div>
+
+            <div class="screen small" id="pause-screen" hidden>
+                <h2>Paused</h2>
+                <button type="button" class="big" id="resume">Resume</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

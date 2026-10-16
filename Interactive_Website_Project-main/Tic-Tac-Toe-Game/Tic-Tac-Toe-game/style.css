@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* relative path – the old "/elnaz..." path broke when the page was opened from its folder */
+    background-color: #2a1033; /* fallback while the photo loads */
+    background-image: url(elnaz-asadi-r-tbG_N80Vo-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    min-height: 100vh;
+    /* removed overflow: hidden, which cut the board off on small screens */
+}
+
+.wrapper {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 0 1rem 2rem;
+}
+
+.title {
+    font-size: clamp(2.5rem, 9vw, 70px);
+    margin: 20px auto 10px auto;
+    color: white;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.scoreboard {
+    display: flex;
+    gap: 1.5rem;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.container {
+    --cell: min(150px, 28vw);
+    display: grid;
+    grid-template-columns: repeat(3, var(--cell));
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.cell {
+    width: var(--cell);
+    height: var(--cell);
+    background: black;
+    color: white;
+    border: 1px solid #C779D0;
+    cursor: pointer;
+    padding: 0;
+    font-size: calc(var(--cell) * 0.66);
+    font-family: sans-serif;
+    font-weight: bold;
+    line-height: 1;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px;
+    transition: background-color 0.2s ease;
+}
+
+.cell:hover:not(:disabled) {
+    background: #1d1022;
+}
+
+.cell:disabled {
+    cursor: default;
+}
+
+.cell.x {
+    color: #ffffff;
+}
+
+.cell.o {
+    color: #C779D0;
+}
+
+.cell.win {
+    background: #C779D0;
+    color: black;
+}
+
+.cell:focus-visible,
+.restart:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: -3px;
+}
+
+.status {
+    font-size: clamp(2rem, 8vw, 70px);
+    color: white;
+    margin: 40px auto 20px auto;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.restart {
+    padding: 10px 30px;
+    font-size: clamp(1.5rem, 6vw, 45px);
+    color: white;
+    background: rgba(0, 0, 0, 0.35);
+    border: 2px solid #C779D0;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.restart:hover {
+    background: #C779D0;
+    color: black;
+}

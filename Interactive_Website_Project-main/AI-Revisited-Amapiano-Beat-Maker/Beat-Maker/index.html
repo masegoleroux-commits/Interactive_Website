@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A 16-step Amapiano beat maker built with the Web Audio API. Every sound is synthesised in the browser.">
+    <title>Amapiano Beat Maker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="studio">
+        <header class="top">
+            <div>
+                <h1>Amapiano <span>Beat Maker</span></h1>
+                <p class="sub">Every sound is synthesised live in your browser. No samples.</p>
+            </div>
+            <div class="lights" aria-hidden="true">
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </header>
+
+        <section class="transport" aria-label="Playback controls">
+            <button type="button" id="play" class="play" aria-pressed="false">▶ Play</button>
+            <label class="knob">
+                <span>Tempo <b id="bpm-value">112</b> BPM</span>
+                <input type="range" id="bpm" min="90" max="130" value="112">
+            </label>
+            <label class="knob">
+                <span>Swing <b id="swing-value">20</b>%</span>
+                <input type="range" id="swing" min="0" max="60" value="20">
+            </label>
+            <label class="knob">
+                <span>Volume</span>
+                <input type="range" id="volume" min="0" max="100" value="80">
+            </label>
+            <div class="presets">
+                <label for="preset">Pattern</label>
+                <select id="preset"></select>
+            </div>
+            <div class="actions">
+                <button type="button" id="randomise" class="ghost">🎲 Surprise me</button>
+                <button type="button" id="share" class="ghost">🔗 Share</button>
+                <button type="button" id="clear" class="ghost">Clear</button>
+            </div>
+        </section>
+
+        <section class="grid-wrap">
+            <div class="grid" id="grid" role="grid" aria-label="Step sequencer"></div>
+        </section>
+
+        <p class="hint">
+            Click a step to switch it on. On the <b>Log drum</b> row, keep clicking to change the note (low → mid → high → off).
+            Press <kbd>Space</kbd> to play or stop.
+        </p>
+        <p class="toast" id="toast" role="status"></p>
+    </main>
+</body>
+</html>

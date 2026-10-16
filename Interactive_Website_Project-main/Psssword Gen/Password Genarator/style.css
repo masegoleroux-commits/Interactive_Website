@@ -1,0 +1,180 @@
+@font-face {
+    font-family: myFamily;
+    src: url(./Fonts/waltograph42.ttf);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111; /* fallback while the photo loads */
+    background-image: url('https://unsplash.com/photos/em5w9_xj3uU/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjkwOTk2ODgxfA&force=true&w=1920');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-family: myFamily, "Poppins", sans-serif;
+    font-weight: normal;
+    color: black;
+    font-size: 2rem; /* was "size: 50vh", which is not a valid CSS property */
+    padding-top: 1rem;
+    margin: 0 0 0.5rem;
+}
+
+.pw-container {
+    background-color: rgb(170, 169, 172);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px; /* was min-width: 600px, which overflowed on phones */
+}
+
+.pw-header {
+    padding: 1rem;
+}
+
+.pw {
+    background-color: rgb(114, 114, 115);
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    min-height: 70px;
+    width: 100%;
+    position: relative;
+    padding: 1rem 5rem 1rem 1rem;
+    overflow: auto;
+    font-family: "Courier New", monospace;
+    word-break: break-all;
+}
+
+.pw button {
+    background-color: white;
+    border: none;
+    color: rgb(29, 2, 56);
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    padding: 0.4rem 0.75rem;
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    transition: background-color 0.2s ease;
+}
+
+.pw button:hover {
+    background-color: #ffd5d5;
+}
+
+.strength {
+    margin-top: 0.75rem;
+}
+
+.strength-bar {
+    height: 8px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.strength-bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: #f60606;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-bar span[data-level="2"] { background: #f6a106; }
+.strength-bar span[data-level="3"] { background: #3fae2a; }
+.strength-bar span[data-level="4"] { background: #1a7f0e; }
+
+#strength-text {
+    margin: 0.4rem 0 0;
+    font-size: 0.9rem;
+    color: #111;
+}
+
+.pw-body {
+    padding: 0 1rem 1rem;
+}
+
+.form-control {
+    color: #111; /* darker text: light grey on grey was hard to read */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.75rem 0;
+}
+
+.form-control input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: #f60606;
+    cursor: pointer;
+}
+
+.form-control input[type="number"] {
+    width: 5rem;
+    padding: 0.25rem;
+}
+
+.feedback {
+    min-height: 1.4em;
+    margin: 0.5rem 0 0;
+    color: #111;
+    font-weight: 600;
+}
+
+.feedback.error {
+    color: #8b0000;
+}
+
+.generate {
+    background-color: #f60606;
+    border: none;
+    color: white; /* was dark red text on a red button: almost invisible */
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+.generate:hover {
+    background-color: #c40000;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #1d0238;
+    outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .pw {
+        font-size: 1.1rem;
+    }
+
+    .generate {
+        font-size: 1.2rem;
+    }
+}

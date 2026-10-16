@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watch BFS, Dijkstra, A* and Greedy search find their way through a maze you draw.">
+    <title>Pathfinding Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="algorithms.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="bar">
+        <h1>Path<span>finder</span></h1>
+        <div class="controls">
+            <label>Algorithm
+                <select id="algorithm">
+                    <option value="astar">A* search</option>
+                    <option value="dijkstra">Dijkstra</option>
+                    <option value="bfs">Breadth-first search</option>
+                    <option value="greedy">Greedy best-first</option>
+                    <option value="dfs">Depth-first search</option>
+                </select>
+            </label>
+            <label>Speed
+                <select id="speed">
+                    <option value="2">Slow</option>
+                    <option value="8" selected>Normal</option>
+                    <option value="40">Fast</option>
+                    <option value="1000">Instant</option>
+                </select>
+            </label>
+            <button type="button" id="run" class="primary">▶ Find path</button>
+            <button type="button" id="maze">Generate maze</button>
+            <button type="button" id="clear-path">Clear path</button>
+            <button type="button" id="reset">Reset board</button>
+        </div>
+    </header>
+
+    <section class="toolbar" aria-label="Drawing tools">
+        <span class="tool-label">Draw:</span>
+        <button type="button" class="tool active" data-tool="wall"><i class="sw wall"></i>Wall</button>
+        <button type="button" class="tool" data-tool="pothole"><i class="sw pothole"></i>Pothole <small>(cost 5)</small></button>
+        <button type="button" class="tool" data-tool="erase"><i class="sw empty"></i>Eraser</button>
+        <span class="legend"><i class="sw start"></i>Start <i class="sw end"></i>Finish (drag to move)</span>
+    </section>
+
+    <p class="explain" id="explain"></p>
+
+    <main class="board-wrap">
+        <div class="board" id="board" aria-label="Grid. Click and drag to draw."></div>
+    </main>
+
+    <section class="stats" aria-live="polite">
+        <div><span>Cells explored</span><b id="stat-visited">–</b></div>
+        <div><span>Path length</span><b id="stat-length">–</b></div>
+        <div><span>Path cost</span><b id="stat-cost">–</b></div>
+        <div><span>Time</span><b id="stat-time">–</b></div>
+    </section>
+
+    <section class="compare">
+        <div class="compare-head">
+            <h2>Compare algorithms</h2>
+            <button type="button" id="compare">Run all on this board</button>
+        </div>
+        <table id="compare-table" hidden>
+            <thead><tr><th>Algorithm</th><th>Explored</th><th>Path cost</th><th>Shortest?</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </section>
+</body>
+</html>

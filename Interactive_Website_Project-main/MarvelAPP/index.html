@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Search Marvel characters using the Marvel Comics API." />
+    <title>Marvel API App</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Marvel Characters</h1>
+      <form class="input-container" id="search-form" autocomplete="off">
+        <label for="input-box" class="visually-hidden">Character name</label>
+        <input type="text" class="input" value="iron man" id="input-box" placeholder="e.g. Spider-Man" />
+        <button class="button" id="submit-button" type="submit">Submit</button>
+        <div class="list" role="listbox" aria-label="Suggestions"></div>
+      </form>
+      <p class="message" id="message" role="status"></p>
+      <div class="display-container" id="show-container"></div>
+    </div>
+    <!-- API Data -->
+    <script src="api-Keys.js"></script>
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
