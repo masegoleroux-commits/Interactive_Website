@@ -79,17 +79,6 @@ An arcade canvas game: pick up passengers and dodge potholes, cones and traffic.
   <img src="AI-Revisited-Taxi-Rush/preview.png" alt="Taxi Rush preview" width="800">
 </p>
 
-## 2026 updates to the original projects
-
-The original five projects keep their folder structure and have been fixed and upgraded. Each README has an **"Updates (2026)"** section listing exactly what changed. Highlights:
-
-- **Hangman:** fixed stray symbol keys on the keyboard and a word that could never be won. Added real-keyboard play, a win/loss score and new words.
-- **Countdown Timer:** it was stuck counting to 2024. It now always counts to the next New Year and celebrates at midnight.
-- **Password Generator:** now uses secure randomness (`crypto.getRandomValues`), shuffles the characters, has a strength meter and a readable button.
-- **Tic-Tac-Toe:** fixed the background image and mobile layout. Added a winning-line highlight and a scoreboard.
-- **Marvel Characters:** repaired a broken stylesheet, fixed autocomplete and added error handling and a README.
-- **All projects:** absolute paths changed to relative ones so everything works on GitHub Pages, plus better accessibility and mobile layouts.
-
 ## Why build lots of small projects?
 
 I believe consistent practice is the key to becoming a better developer. Building many small, complete projects pushes me to think critically, solve problems efficiently and combine different technologies into real, working apps.
